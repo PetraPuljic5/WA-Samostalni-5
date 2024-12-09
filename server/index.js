@@ -1,17 +1,16 @@
 import express from 'express';
+import cors from 'cors';
 import { connectToDatabase } from './db.js';
 
 const app = express();
+
+app.use(cors());
 
 let db = await connectToDatabase();
 
 app.use(express.json());
 
 const PORT = 3000;
-
-app.get('/', (req, res) => {
-    res.send('Pizzeria');
-});
 
 app.get('/pizze', async (req, res) => {
     let pizze_collection = db.collection('pizze'); 

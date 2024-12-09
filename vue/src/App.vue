@@ -30,7 +30,6 @@
       </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
       <p>© 2024 Pizzeria Petra’s Crust.</p>
     </footer>
@@ -44,14 +43,13 @@ export default {
   name: 'App',
   data() {
     return {
-      pizzas: [] // Ovdje ćemo spremiti podatke o pizzama
+      pizzas: []
     };
   },
   mounted() {
-    // Dohvat podataka s backend servera
     axios.get('http://localhost:3000/pizze')
       .then(response => {
-        this.pizzas = response.data; // Spremanje podataka o pizzama
+        this.pizzas = response.data;
       })
       .catch(error => {
         console.error('Greška pri dohvaćanju podataka:', error);
@@ -61,5 +59,4 @@ export default {
 </script>
 
 <style>
-/* Dodajte svoj CSS ovdje */
 </style>

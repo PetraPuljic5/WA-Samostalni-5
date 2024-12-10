@@ -36,7 +36,6 @@ app.post('/pizze', async (req, res) => {
         }
 });
     
-
 app.listen(PORT, error => {
     if (error) {
         console.error(`Greška prilikom pokretanja poslužitelja: ${error.message}`);
